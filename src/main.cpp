@@ -1,19 +1,63 @@
 #include <Arduino.h>
+#include "hardware.h"
+#include "animation.h"
+#include "status.h"
 
-// put function declarations here:
-int myFunction(int, int);
+//pantalla de 128 px de alto y 64 px de ancho, con 8x8 px por ojo, dejando 32 px de espacio entre los ojos
+
+// Variable global para rastrear el estado del robot (ej. escuchando, reposo)
+// (Asumiendo que definiste algo como 'RobotState' en status.h)
+int estado_actual = 0; 
 
 void setup() {
-  // put your setup code here, to run once:
-  int a;
-  int result = myFunction(2, 3);
+  // Iniciar la comunicación serie a 115200 baudios para poder leer 
+  // mensajes de prueba y errores en la terminal
+  Serial.begin(115200);
+  Serial.println("Iniciando sistema del robot...");
+
+  inicializar_hardware();
+
+  Emotion ojosNeutros =
+  {
+    .ojoDerecho =
+    {
+        {1,1,1,1,1,1,1,1},
+        {1,1,1,1,1,1,1,1},
+        {1,1,1,1,1,1,1,1},
+        {1,1,1,1,1,1,1,1},
+        {1,1,1,1,1,1,1,1},
+        {1,1,1,1,1,1,1,1},
+        {1,1,1,1,1,1,1,1},
+        {1,1,1,1,1,1,1,1}
+    },
+    .ojoIzquierdo =
+    {
+        {1,1,1,1,1,1,1,1},
+        {1,1,1,1,1,1,1,1},
+        {1,1,1,1,1,1,1,1},
+        {1,1,1,1,1,1,1,1},
+        {1,1,1,1,1,1,1,1},
+        {1,1,1,1,1,1,1,1},
+        {1,1,1,1,1,1,1,1},
+        {1,1,1,1,1,1,1,1}
+    },
+    .volumenAltavoz = 200
+  };
+
+  dibujar_emocion(&ojosNeutros);
+
+  // 2. Establecer el estado inicial al encender
+  // estado_actual = ESTADO_REPOSO; 
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-}
+  // Aquí ocurrirá el ciclo de vida continuo del robot:
+  
+  // 1. Leer los sensores (micrófono INMP441, sensor de distancia)
+  // 2. Procesar esa información y actualizar 'estado_actual' (status.c)
+  // 3. Dibujar los ojos en la pantalla basándose en el estado (animation.c)
 
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+  // Una pequeña pausa de 10 milisegundos ayuda a no saturar el procesador 
+  // del ESP32-S3 de forma innecesaria
+  delay(10); 
 }

@@ -1,9 +1,12 @@
 #ifndef STATUS_H
 #define STATUS_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 enum e_Emociones
 {
-    SORPRENDIDO=0,
     ENAMORADO,
     ASUSTADO,
     CANSADO,
@@ -21,27 +24,38 @@ enum e_Emociones
     ANSIOSO,
     CULPABLE,
     CRITICO,
-    SORPRENDIDO_NEGATIVO,
-    SORPRENDIDO_POSITIVO,
-    ENOJADO_NEGATIVO,
-    ENOJADO_POSITIVO,
-    FELIZ_NEGATIVO,
-    FELIZ_POSITIVO,
-    TRISTE_NEGATIVO,
-    TRISTE_POSITIVO,
-    HERIDO_NEGATIVO,
-    HERIDO_POSITIVO,
+    SORPRENDIDO,
+    ENOJADO,
+    FELIZ,
+    TRISTE,
+    HERIDO,
     NEUTRO,
     HUMILLADO,
     RECHAZADO,
     CELOSO,
     ODIOSO,
-    DESQUISIADO, 
+    DESQUICIADO, 
     VENGATIVO,
     FRUSTRADO,
-    DISTANTE
+    DISTANTE,
+    BORRACHO,
+    BAILARIN,
+    HALLOWEEN,
 };
 
-void actualizar_estado(void);
+struct s_Emotion
+{
+    int ojoDerecho[8][8];
+    int ojoIzquierdo[8][8];
+    int volumenAltavoz;
+
+}; typedef struct s_Emotion Emotion;
+
+void actualizar_emocion(enum e_Emociones nuevo_estado);
+
+#ifdef __cplusplus
+}
+#endif
+
 
 #endif
