@@ -1,7 +1,7 @@
-#Proyecto: Ojos con emociones
+# Proyecto: Ojos con emociones
 Integrantes: Martina Márquez y José Matias Monje
 
-#Comandos Makefile
+# Comandos Makefile
 
 make --> compilar
 make upload --> sube la ultima version compilada <br>
@@ -9,7 +9,7 @@ make monitor --> Abre el monitor serie para leer los mensajes del sistema y las 
 make flash --> Compila el código, lo sube al microcontrolador y abre automáticamente el monitor serie. <br>
 make clean --> Elimina los archivos temporales generados en construcciones anteriores para forzar una compilación limpia.
 
-#Estructura proyecto
+# Estructura proyecto
 
 status.c --> <br>
 main.cpp --> <br>
@@ -19,7 +19,7 @@ status.h --> <br>
 hardware.h --> <br>
 animation.h --> 
 
-#Convenciones del codigo
+# Convenciones del codigo
 
 Variables: camelCase <br>
 Funciones: snake_case <br>
