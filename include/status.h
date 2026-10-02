@@ -5,6 +5,8 @@
 extern "C" {
 #endif
 
+//ENUMS
+
 enum e_Emociones
 {
     ENAMORADO,
@@ -43,6 +45,7 @@ enum e_Emociones
     HALLOWEEN,
 };
 
+//STRUCTS
 struct s_Emotion
 {
     int ojoDerecho[8][8];
@@ -51,6 +54,8 @@ struct s_Emotion
 
 }; typedef struct s_Emotion Emotion;
 
+
+//PROTOTIPO FUNCIONES
 void actualizar_emocion(enum e_Emociones nuevo_estado);
 
 #ifdef __cplusplus
