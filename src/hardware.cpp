@@ -42,3 +42,20 @@ void dibujar_emocion(Emotion *sentimiento)
     }
     pantalla.display();
 }
+
+int medir_distancia()
+{
+    long duracion;
+    int distancia;
+
+    //SENSOR MOVIMIENTO
+    pinMode(MOVE_SENSOR_TRIG, OUTPUT);
+    pinMode(MOVE_SENSOR_ECHO, INPUT);
+    digitalWrite(MOVE_SENSOR_TRIG, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(MOVE_SENSOR_TRIG,LOW);
+    duracion=pulseIn(MOVE_SENSOR_ECHO,HIGH);
+    distancia=duracion/58;
+    return distancia;
+
+}

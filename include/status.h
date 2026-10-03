@@ -54,6 +54,12 @@ struct s_Emotion
 
 }; typedef struct s_Emotion Emotion;
 
+//VARIABLES EXTERNAS PARA QUE LAS LEA C++
+extern Emotion ojosNeutros;
+extern Emotion ojosDescansando;
+extern Emotion ojosEnamorados;
+extern Emotion ojosCansados;
+extern Emotion ojosSorprendidos;
 
 //PROTOTIPO FUNCIONES
 void actualizar_emocion(enum e_Emociones nuevo_estado);
