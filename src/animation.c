@@ -1,5 +1,6 @@
 #include "animation.h"
 #include "status.h"
+#include "hardware.h"
 #include<stdio.h>
 #include <Arduino.h>
 
@@ -24,9 +25,9 @@ void espacio_personal(void)
 
 void reflejo_de_acercamiento(void)
 {
-    float medidaActual = medir_distancia();
+    int medidaActual = medir_distancia();
 
-    if(medidaActual <= 2.1 && medidaActual >= 5.0)
+    if(medidaActual >= 2 && medidaActual <= 5)
     {
         dibujar_emocion(&ojosDescansando);
     }

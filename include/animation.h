@@ -8,7 +8,7 @@ extern "C" {
 //FUNCIONES
 void actualizar_animacion(void);
 void parpadeo(void);
-void espacio_personal(void);
+void reflejo_de_acercamiento(void);
 
 #ifdef __cplusplus
 }

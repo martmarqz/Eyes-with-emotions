@@ -15,3 +15,6 @@ monitor:
 # Comando para subir el código y abrir el monitor serie inmediatamente
 flash:
 	pio run --target upload && pio device monitor
+# Ejecuta el servidor local de IA y conexión EEG
+cerebro:
+	./robot_env/bin/python cerebro.py

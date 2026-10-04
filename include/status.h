@@ -60,6 +60,7 @@ extern Emotion ojosDescansando;
 extern Emotion ojosEnamorados;
 extern Emotion ojosCansados;
 extern Emotion ojosSorprendidos;
+extern Emotion ojosFuriosos;
 
 //PROTOTIPO FUNCIONES
 void actualizar_emocion(enum e_Emociones nuevo_estado);

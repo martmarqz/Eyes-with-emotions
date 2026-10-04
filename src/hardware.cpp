@@ -1,5 +1,8 @@
 #include "hardware.h"
 #include <stdio.h> 
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
 
 Adafruit_SSD1306 pantalla(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
@@ -51,6 +54,8 @@ int medir_distancia()
     //SENSOR MOVIMIENTO
     pinMode(MOVE_SENSOR_TRIG, OUTPUT);
     pinMode(MOVE_SENSOR_ECHO, INPUT);
+    digitalWrite(MOVE_SENSOR_TRIG, LOW);
+    delayMicroseconds(2);
     digitalWrite(MOVE_SENSOR_TRIG, HIGH);
     delayMicroseconds(10);
     digitalWrite(MOVE_SENSOR_TRIG,LOW);
