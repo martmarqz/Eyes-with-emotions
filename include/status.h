@@ -41,8 +41,8 @@ enum e_Emociones
     FRUSTRADO,
     DISTANTE,
     BORRACHO,
-    BAILARIN,
-    HALLOWEEN,
+    MILLONETA,
+    EXCLAMACION
 };
 
 //STRUCTS
@@ -61,6 +61,11 @@ extern Emotion ojosEnamorados;
 extern Emotion ojosCansados;
 extern Emotion ojosSorprendidos;
 extern Emotion ojosFuriosos;
+extern Emotion ojosEscuchando;
+extern Emotion ojosAsustados;
+extern Emotion ojosBorrachos;
+extern Emotion ojosExclamacion;
+extern Emotion ojosFelices;
 
 //PROTOTIPO FUNCIONES
 void actualizar_emocion(enum e_Emociones nuevo_estado);
