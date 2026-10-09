@@ -91,9 +91,10 @@ extern Emotion ojosDistantes;
 extern Emotion ojosBailarin;
 extern Emotion ojosHalloween;
 extern Emotion ojosPesos;
+extern Emotion ojosGuino;
 
 
-//PROTOTIPO FUNCIONES
+//FUNCIONES
 void actualizar_emocion(enum e_Emociones nuevo_estado);
 
 #ifdef __cplusplus
