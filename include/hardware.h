@@ -7,8 +7,8 @@
 #define MICROPHONE_PIN 1
 
 // Pines para la pantalla y sensor 
-#define DISPLAY_SDA   4
-#define DISPLAY_SCL   5
+#define DISPLAY_SDA   8
+#define DISPLAY_SCL   9
 #define MOVE_SENSOR_ECHO 5
 #define MOVE_SENSOR_TRIG 4
 #define TOUCH_PIN     32 

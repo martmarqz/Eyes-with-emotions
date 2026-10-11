@@ -1,6 +1,7 @@
 #include "hardware.h"
 #include <stdio.h> 
 #include <Wire.h>
+#include <Arduino.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 
@@ -8,15 +9,30 @@ Adafruit_SSD1306 pantalla(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
 void inicializar_hardware(void) 
 {
-    printf("Iniciando configuración del ESP32-S3...\n");
-    Wire.begin(DISPLAY_SDA, DISPLAY_SCL); // Inicializa la comunicación I2C para la pantalla OLED
-    pantalla.begin(SSD1306_SWITCHCAPVCC, 0x3C); // Dirección I2C de la pantalla OLED
+    delay(1000);
+    Serial.println("Iniciando configuración del ESP32-S3...");
+    
+    Wire.begin(DISPLAY_SDA, DISPLAY_SCL); 
+    Wire.setClock(100000); // Forzamos una velocidad estándar para que la transferencia no se congele
+    
+    Serial.println("I2C iniciado. Conectando a la pantalla...");
+    
+    if(!pantalla.begin(SSD1306_SWITCHCAPVCC, 0x3C)) 
+    {
+        Serial.println("Error: No se encontro la pantalla OLED");
+        while(true) { delay(100); }
+    }
 
-    //En C++ hhay que poner objeto.accion
+    Serial.println("Paso 1: Pantalla conectada con éxito.");
+    
     pantalla.clearDisplay();
-    pantalla.display(); // Muestra la pantalla lo hecho
+    Serial.println("Paso 2: clearDisplay ejecutado.");
+    
+    pantalla.display(); 
+    Serial.println("Paso 3: display ejecutado.");
 
-    pinMode(TOUCH_PIN,INPUT);
+    //pinMode(TOUCH_PIN, INPUT);
+    //Serial.println("Paso 4: pinMode ejecutado.");
 }
 
 void dibujar_emocion(Emotion *sentimiento) 
