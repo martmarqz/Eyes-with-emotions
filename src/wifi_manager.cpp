@@ -54,7 +54,7 @@ int escuchar_estado_udp(void)
 
         if (longitud > 0) 
         {
-            buffer[longitud] = '\0'; // Cerramos la cadena de texto
+            buffer[longitud] = '\0'; 
         }
         
         // Convierte el texto recibido a un número entero

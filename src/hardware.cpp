@@ -15,6 +15,8 @@ void inicializar_hardware(void)
     //En C++ hhay que poner objeto.accion
     pantalla.clearDisplay();
     pantalla.display(); // Muestra la pantalla lo hecho
+
+    pinMode(TOUCH_PIN,INPUT);
 }
 
 void dibujar_emocion(Emotion *sentimiento) 
