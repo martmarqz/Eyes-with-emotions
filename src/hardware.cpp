@@ -35,33 +35,14 @@ void inicializar_hardware(void)
     //Serial.println("Paso 4: pinMode ejecutado.");
 }
 
-void dibujar_emocion(Emotion *sentimiento) 
+void dibujar_emocion(Emotion *sentimiento)
 {
-    int i,j;
-    printf("Dibujando emoción en la pantalla:\n");
-    for(i=0;i<8;i++)
+    if (sentimiento == NULL || sentimiento->dibujar == NULL)
     {
-        for(j=0;j<8;j++)
-        {
-            if(sentimiento->ojoDerecho[i][j] == 1)
-                pantalla.fillRect(j * 8 + 64, i * 8, 8, 8, SSD1306_WHITE); // Ojo derecho
-            else
-                pantalla.fillRect(j * 8 + 64, i * 8, 8, 8, SSD1306_BLACK);
-        }
-    
+        return;
     }
-    for(i=0;i<8;i++)
-    {
-        for(j=0;j<8;j++)
-        {
-            if(sentimiento->ojoIzquierdo[i][j] == 1)
-                pantalla.fillRect(j * 8, i * 8, 8, 8, SSD1306_WHITE); // Ojo izquierdo
-            else
-                pantalla.fillRect(j * 8, i * 8, 8, 8, SSD1306_BLACK);
-        }
-        
-    }
-    pantalla.display();
+
+    sentimiento->dibujar();
 }
 
 int medir_distancia()
