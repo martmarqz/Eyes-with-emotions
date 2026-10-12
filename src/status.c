@@ -975,7 +975,7 @@ Emotion ojosPesos =
     .volumenAltavoz = 200
 };
 
-Emotion ojoGuino =
+Emotion ojosGuino =
 {
     .ojoDerecho =
     {
