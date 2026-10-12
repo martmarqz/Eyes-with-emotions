@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-//ENUMS
+// ENUM y STRUCTS
 
 enum e_Emociones
 {
@@ -36,7 +36,7 @@ enum e_Emociones
     RECHAZADO,
     CELOSO,
     ODIOSO,
-    DESQUICIADO, 
+    DESQUICIADO,
     VENGATIVO,
     FRUSTRADO,
     DISTANTE,
@@ -45,25 +45,27 @@ enum e_Emociones
     EXCLAMACION
 };
 
-//STRUCTS
-struct s_Emotion
+typedef void (*FuncionDibujoEmocion)(void);
+
+typedef struct s_Emotion
 {
-    int ojoDerecho[8][8];
-    int ojoIzquierdo[8][8];
+    FuncionDibujoEmocion dibujar;
     int volumenAltavoz;
+} Emotion;
 
-}; typedef struct s_Emotion Emotion;
+void dibujar_mirada_reojo(void);
+void dibujar_ojos_descansando(void);
 
-//VARIABLES EXTERNAS PARA QUE LAS LEA C++
-extern Emotion ojosNeutros;
+/* Emociones conservadas para mantener compatibles animation.c y main.cpp. */
 extern Emotion ojosDescansando;
 extern Emotion ojosEnamorados;
 extern Emotion ojosCansados;
 extern Emotion ojosSorprendidos;
-extern Emotion ojosFuriosos;
+extern Emotion ojosNeutros;
 extern Emotion ojosFelices;
 extern Emotion ojosBorrachos;
 extern Emotion ojosAsustados;
+extern Emotion ojosFuriosos;
 extern Emotion ojosExclamacion;
 extern Emotion ojosHeridos;
 extern Emotion ojosMiedo;
@@ -93,13 +95,11 @@ extern Emotion ojosHalloween;
 extern Emotion ojosPesos;
 extern Emotion ojosGuino;
 
-
-//FUNCIONES
 void actualizar_emocion(enum e_Emociones nuevo_estado);
+enum e_Emociones obtener_emocion(void);
 
 #ifdef __cplusplus
 }
 #endif
-
 
 #endif
