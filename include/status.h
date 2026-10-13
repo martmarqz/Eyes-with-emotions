@@ -42,7 +42,8 @@ enum e_Emociones
     DISTANTE,
     BORRACHO,
     MILLONETA,
-    EXCLAMACION
+    EXCLAMACION,
+    GUIÑO
 };
 
 typedef void (*FuncionDibujoEmocion)(void);
@@ -51,6 +52,8 @@ typedef struct s_Emotion
 {
     FuncionDibujoEmocion dibujar;
     int volumenAltavoz;
+    int ojoDerecho[8][8];
+    int ojoIzquierdo[8][8];
 } Emotion;
 
 void dibujar_mirada_reojo(void);
