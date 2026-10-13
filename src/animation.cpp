@@ -1,7 +1,7 @@
 #include "animation.h"
 #include "status.h"
 #include "hardware.h"
-#include<stdio.h>
+#include <stdio.h>
 #include <Arduino.h>
 
 unsigned long tiempo_ultimo_parpadeo = 0;
