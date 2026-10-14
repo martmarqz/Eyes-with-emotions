@@ -1483,6 +1483,1184 @@ void dibujar_ojos_bailarines(void)
     pantalla.display();
 }
 
+void dibujar_desconfiados(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 26, 26, 12, SSD1306_WHITE);
+
+    pantalla.fillRect(42, 26, 8, 12, SSD1306_BLACK);
+
+    pantalla.drawLine(20, 18, 50, 12, SSD1306_WHITE);
+    pantalla.drawLine(20, 19, 50, 13, SSD1306_WHITE);
+
+    pantalla.fillRect(78, 26, 26, 12, SSD1306_WHITE);
+
+    pantalla.fillRect(96, 26, 8, 12, SSD1306_BLACK);
+
+    pantalla.drawLine(78, 16, 108, 20, SSD1306_WHITE);
+    pantalla.drawLine(78, 17, 108, 21, SSD1306_WHITE);
+    pantalla.drawLine(52, 46, 62, 44, SSD1306_WHITE);
+    pantalla.drawLine(62, 44, 76, 46, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_sarcasticos(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 28, 26, 8, SSD1306_WHITE);
+
+    pantalla.fillRect(42, 28, 8, 8, SSD1306_BLACK);
+
+    pantalla.drawLine(22, 20, 50, 16, SSD1306_WHITE);
+    pantalla.drawLine(22, 21, 50, 17, SSD1306_WHITE);
+
+    pantalla.fillRect(78, 28, 26, 8, SSD1306_WHITE);
+
+    pantalla.fillRect(96, 28, 8, 8, SSD1306_BLACK);
+
+    pantalla.drawLine(78, 16, 106, 20, SSD1306_WHITE);
+    pantalla.drawLine(78, 17, 106, 21, SSD1306_WHITE);
+
+    pantalla.drawLine(50, 46, 62, 48, SSD1306_WHITE);
+    pantalla.drawLine(62, 48, 76, 44, SSD1306_WHITE);
+    pantalla.drawLine(76, 44, 82, 42, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_maliciosos(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 24, 26, 14, SSD1306_WHITE);
+    pantalla.fillRect(42, 24, 5, 6, SSD1306_BLACK);
+
+    pantalla.drawLine(22, 22, 50, 30, SSD1306_BLACK);
+
+    pantalla.drawLine(20, 16, 50, 21, SSD1306_WHITE);
+    pantalla.drawLine(20, 17, 50, 22, SSD1306_WHITE);
+
+    pantalla.fillRect(78, 24, 26, 14, SSD1306_WHITE);
+    pantalla.fillRect(80, 24, 5, 6, SSD1306_BLACK);
+
+    pantalla.drawLine(78, 30, 106, 22, SSD1306_BLACK);
+
+    pantalla.drawLine(78, 21, 108, 16, SSD1306_WHITE);
+    pantalla.drawLine(78, 22, 108, 17, SSD1306_WHITE);
+
+    pantalla.fillRect(44, 29, 4, 5, SSD1306_BLACK);
+    pantalla.fillRect(80, 29, 4, 5, SSD1306_BLACK);
+
+    pantalla.drawLine(48, 46, 58, 49, SSD1306_WHITE);
+    pantalla.drawLine(58, 49, 70, 47, SSD1306_WHITE);
+    pantalla.drawLine(70, 47, 82, 42, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_avergonzados(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 22, 26, 16, SSD1306_WHITE);
+    pantalla.fillRect(34, 32, 8, 6, SSD1306_BLACK);
+
+    pantalla.drawLine(24, 22, 50, 22, SSD1306_BLACK);
+
+    pantalla.drawLine(24, 17, 50, 19, SSD1306_WHITE);
+    pantalla.drawLine(24, 18, 50, 20, SSD1306_WHITE);
+
+    pantalla.fillRect(78, 22, 26, 16, SSD1306_WHITE);
+    pantalla.fillRect(88, 32, 8, 6, SSD1306_BLACK);
+
+    pantalla.drawLine(78, 22, 104, 22, SSD1306_BLACK);
+
+    pantalla.drawLine(78, 19, 104, 17, SSD1306_WHITE);
+    pantalla.drawLine(78, 20, 104, 18, SSD1306_WHITE);
+
+    pantalla.fillRect(20, 40, 3, 3, SSD1306_WHITE);
+    pantalla.fillRect(24, 43, 3, 3, SSD1306_WHITE);
+    pantalla.fillRect(28, 40, 3, 3, SSD1306_WHITE);
+
+    pantalla.fillRect(97, 40, 3, 3, SSD1306_WHITE);
+    pantalla.fillRect(101, 43, 3, 3, SSD1306_WHITE);
+    pantalla.fillRect(105, 40, 3, 3, SSD1306_WHITE);
+
+    pantalla.drawLine(57, 48, 70, 48, SSD1306_WHITE);
+    pantalla.drawLine(57, 49, 70, 49, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_suplicantes(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(20, 23, 30, 17, SSD1306_WHITE);
+    pantalla.fillRect(78, 23, 30, 17, SSD1306_WHITE);
+
+    pantalla.fillRect(30, 23, 9, 7, SSD1306_BLACK);
+    pantalla.fillRect(88, 23, 9, 7, SSD1306_BLACK);
+
+    pantalla.drawLine(20, 17, 30, 12, SSD1306_WHITE);
+    pantalla.drawLine(30, 12, 50, 17, SSD1306_WHITE);
+
+    pantalla.drawLine(78, 17, 88, 12, SSD1306_WHITE);
+    pantalla.drawLine(88, 12, 108, 17, SSD1306_WHITE);
+
+    pantalla.drawLine(54, 47, 62, 44, SSD1306_WHITE);
+    pantalla.drawLine(62, 44, 70, 47, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+
+void dibujar_adormilados(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 25, 26, 12, SSD1306_WHITE);
+    pantalla.fillRect(78, 25, 26, 12, SSD1306_WHITE);
+
+    pantalla.fillRect(34, 32, 7, 5, SSD1306_BLACK);
+    pantalla.fillRect(88, 32, 7, 5, SSD1306_BLACK);
+
+    pantalla.drawLine(24, 25, 50, 32, SSD1306_BLACK);
+    pantalla.drawLine(78, 32, 104, 25, SSD1306_BLACK);
+
+    pantalla.drawLine(24, 19, 50, 20, SSD1306_WHITE);
+    pantalla.drawLine(78, 20, 104, 19, SSD1306_WHITE);
+
+    pantalla.drawLine(58, 47, 70, 47, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+
+void dibujar_mareados(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(23, 24, 28, 15, SSD1306_WHITE);
+    pantalla.fillRect(77, 24, 28, 15, SSD1306_WHITE);
+
+    pantalla.fillRect(27, 27, 7, 7, SSD1306_BLACK);
+    pantalla.fillRect(94, 31, 7, 7, SSD1306_BLACK);
+
+    pantalla.drawLine(22, 20, 18, 24, SSD1306_WHITE);
+    pantalla.drawLine(18, 24, 22, 28, SSD1306_WHITE);
+
+    pantalla.drawLine(106, 28, 110, 24, SSD1306_WHITE);
+    pantalla.drawLine(110, 24, 106, 20, SSD1306_WHITE);
+
+    pantalla.drawLine(54, 47, 60, 44, SSD1306_WHITE);
+    pantalla.drawLine(60, 44, 66, 48, SSD1306_WHITE);
+    pantalla.drawLine(66, 48, 72, 44, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+
+void dibujar_en_shock(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(18, 19, 34, 22, SSD1306_WHITE);
+    pantalla.fillRect(76, 19, 34, 22, SSD1306_WHITE);
+
+    pantalla.fillRect(33, 28, 5, 5, SSD1306_BLACK);
+    pantalla.fillRect(91, 28, 5, 5, SSD1306_BLACK);
+
+    pantalla.drawLine(18, 12, 50, 8, SSD1306_WHITE);
+    pantalla.drawLine(78, 8, 110, 12, SSD1306_WHITE);
+
+    pantalla.drawRect(56, 44, 16, 7, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+
+void dibujar_confiados(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 27, 26, 9, SSD1306_WHITE);
+    pantalla.fillRect(78, 27, 26, 9, SSD1306_WHITE);
+
+    pantalla.fillRect(34, 30, 7, 6, SSD1306_BLACK);
+    pantalla.fillRect(88, 30, 7, 6, SSD1306_BLACK);
+
+    pantalla.drawLine(22, 19, 50, 19, SSD1306_WHITE);
+    pantalla.drawLine(78, 19, 106, 19, SSD1306_WHITE);
+
+    pantalla.drawLine(54, 45, 62, 48, SSD1306_WHITE);
+    pantalla.drawLine(62, 48, 70, 48, SSD1306_WHITE);
+    pantalla.drawLine(70, 48, 78, 45, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+
+void dibujar_investigadores(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(22, 24, 28, 14, SSD1306_WHITE);
+    pantalla.fillRect(33, 27, 8, 8, SSD1306_BLACK);
+
+    pantalla.fillRect(80, 28, 24, 9, SSD1306_WHITE);
+    pantalla.fillRect(91, 29, 7, 7, SSD1306_BLACK);
+
+    pantalla.drawLine(22, 18, 50, 16, SSD1306_WHITE);
+    pantalla.drawLine(80, 21, 104, 19, SSD1306_WHITE);
+
+    pantalla.fillRect(54, 46, 22, 3, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+
+void dibujar_nerviosos(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(23, 22, 28, 18, SSD1306_WHITE);
+    pantalla.fillRect(77, 22, 28, 18, SSD1306_WHITE);
+
+    pantalla.fillRect(35, 28, 5, 6, SSD1306_BLACK);
+    pantalla.fillRect(89, 28, 5, 6, SSD1306_BLACK);
+
+    pantalla.drawLine(22, 16, 50, 20, SSD1306_WHITE);
+    pantalla.drawLine(78, 20, 106, 16, SSD1306_WHITE);
+
+    pantalla.drawLine(56, 47, 72, 47, SSD1306_WHITE);
+    pantalla.drawLine(58, 45, 70, 45, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_fastidiados(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 24, 26, 14, SSD1306_WHITE);
+    pantalla.fillRect(78, 24, 26, 14, SSD1306_WHITE);
+
+    pantalla.fillRect(34, 24, 8, 5, SSD1306_BLACK);
+    pantalla.fillRect(88, 24, 8, 5, SSD1306_BLACK);
+
+    pantalla.drawLine(22, 18, 50, 20, SSD1306_WHITE);
+    pantalla.drawLine(78, 20, 106, 18, SSD1306_WHITE);
+
+    pantalla.drawLine(55, 48, 63, 45, SSD1306_WHITE);
+    pantalla.drawLine(63, 45, 73, 48, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_aliviados(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.drawLine(22, 30, 30, 34, SSD1306_WHITE);
+    pantalla.drawLine(30, 34, 40, 34, SSD1306_WHITE);
+    pantalla.drawLine(40, 34, 50, 30, SSD1306_WHITE);
+
+    pantalla.drawLine(78, 30, 88, 34, SSD1306_WHITE);
+    pantalla.drawLine(88, 34, 98, 34, SSD1306_WHITE);
+    pantalla.drawLine(98, 34, 106, 30, SSD1306_WHITE);
+
+    pantalla.drawLine(24, 21, 50, 21, SSD1306_WHITE);
+    pantalla.drawLine(78, 21, 104, 21, SSD1306_WHITE);
+
+    pantalla.drawLine(58, 46, 63, 48, SSD1306_WHITE);
+    pantalla.drawLine(63, 48, 68, 48, SSD1306_WHITE);
+    pantalla.drawLine(68, 48, 73, 46, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_traviesos(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 24, 26, 14, SSD1306_WHITE);
+    pantalla.fillRect(78, 24, 26, 14, SSD1306_WHITE);
+
+    pantalla.drawLine(24, 24, 50, 31, SSD1306_BLACK);
+    pantalla.drawLine(78, 31, 104, 24, SSD1306_BLACK);
+
+    pantalla.fillRect(40, 29, 7, 7, SSD1306_BLACK);
+    pantalla.fillRect(81, 29, 7, 7, SSD1306_BLACK);
+
+    pantalla.drawLine(22, 18, 50, 21, SSD1306_WHITE);
+    pantalla.drawLine(78, 21, 106, 18, SSD1306_WHITE);
+
+    pantalla.drawLine(52, 45, 61, 48, SSD1306_WHITE);
+    pantalla.drawLine(61, 48, 72, 47, SSD1306_WHITE);
+    pantalla.drawLine(72, 47, 81, 42, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_congelados(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(20, 21, 30, 20, SSD1306_WHITE);
+    pantalla.fillRect(78, 21, 30, 20, SSD1306_WHITE);
+
+    pantalla.fillRect(34, 28, 5, 6, SSD1306_BLACK);
+    pantalla.fillRect(90, 28, 5, 6, SSD1306_BLACK);
+
+    pantalla.drawLine(20, 14, 50, 12, SSD1306_WHITE);
+    pantalla.drawLine(78, 12, 108, 14, SSD1306_WHITE);
+
+    pantalla.drawLine(14, 25, 10, 22, SSD1306_WHITE);
+    pantalla.drawLine(14, 34, 9, 36, SSD1306_WHITE);
+    pantalla.drawLine(108, 25, 112, 22, SSD1306_WHITE);
+    pantalla.drawLine(108, 34, 113, 36, SSD1306_WHITE);
+
+    pantalla.drawLine(54, 47, 59, 45, SSD1306_WHITE);
+    pantalla.drawLine(59, 45, 64, 48, SSD1306_WHITE);
+    pantalla.drawLine(64, 48, 69, 45, SSD1306_WHITE);
+    pantalla.drawLine(69, 45, 75, 47, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_timidos(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 25, 26, 13, SSD1306_WHITE);
+    pantalla.fillRect(78, 25, 26, 13, SSD1306_WHITE);
+
+    pantalla.fillRect(42, 28, 7, 7, SSD1306_BLACK);
+    pantalla.fillRect(79, 28, 7, 7, SSD1306_BLACK);
+
+    pantalla.drawLine(24, 20, 50, 23, SSD1306_WHITE);
+    pantalla.drawLine(78, 23, 104, 20, SSD1306_WHITE);
+
+    pantalla.drawLine(59, 48, 69, 48, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_fascinados(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(20, 22, 30, 18, SSD1306_WHITE);
+    pantalla.fillRect(78, 22, 30, 18, SSD1306_WHITE);
+
+    pantalla.fillRect(29, 25, 12, 12, SSD1306_BLACK);
+    pantalla.fillRect(87, 25, 12, 12, SSD1306_BLACK);
+
+    pantalla.fillRect(31, 25, 3, 3, SSD1306_WHITE);
+    pantalla.fillRect(89, 25, 3, 3, SSD1306_WHITE);
+
+    pantalla.drawLine(20, 15, 50, 11, SSD1306_WHITE);
+    pantalla.drawLine(78, 11, 108, 15, SSD1306_WHITE);
+
+    pantalla.drawRect(57, 44, 15, 7, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_exhaustos(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 24, 26, 13, SSD1306_WHITE);
+    pantalla.fillRect(78, 24, 26, 13, SSD1306_WHITE);
+
+    pantalla.drawLine(24, 24, 50, 31, SSD1306_BLACK);
+    pantalla.drawLine(78, 31, 104, 24, SSD1306_BLACK);
+
+    pantalla.fillRect(35, 31, 6, 5, SSD1306_BLACK);
+    pantalla.fillRect(89, 31, 6, 5, SSD1306_BLACK);
+
+    pantalla.drawLine(24, 19, 50, 21, SSD1306_WHITE);
+    pantalla.drawLine(78, 21, 104, 19, SSD1306_WHITE);
+
+    pantalla.drawRect(56, 44, 16, 8, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_pensativos(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 24, 26, 14, SSD1306_WHITE);
+    pantalla.fillRect(78, 24, 26, 14, SSD1306_WHITE);
+
+    pantalla.fillRect(34, 24, 7, 7, SSD1306_BLACK);
+
+    pantalla.fillRect(94, 28, 7, 7, SSD1306_BLACK);
+
+    pantalla.drawLine(22, 18, 50, 15, SSD1306_WHITE);
+    pantalla.drawLine(78, 18, 104, 21, SSD1306_WHITE);
+
+    pantalla.drawLine(57, 47, 64, 45, SSD1306_WHITE);
+    pantalla.drawLine(64, 45, 72, 47, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_orgullosos(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 27, 26, 9, SSD1306_WHITE);
+    pantalla.fillRect(78, 27, 26, 9, SSD1306_WHITE);
+
+    pantalla.fillRect(34, 30, 7, 6, SSD1306_BLACK);
+    pantalla.fillRect(88, 30, 7, 6, SSD1306_BLACK);
+
+    pantalla.drawLine(22, 17, 50, 13, SSD1306_WHITE);
+    pantalla.drawLine(78, 13, 106, 17, SSD1306_WHITE);
+
+    pantalla.fillRect(54, 46, 22, 4, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_desconfiados(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 26, 26, 12, SSD1306_WHITE);
+    pantalla.fillRect(42, 26, 8, 12, SSD1306_BLACK);
+
+    pantalla.drawLine(20, 11, 50, 18, SSD1306_WHITE);
+    pantalla.drawLine(20, 12, 50, 19, SSD1306_WHITE);
+
+    pantalla.fillRect(78, 26, 26, 12, SSD1306_WHITE);
+    pantalla.fillRect(96, 26, 8, 12, SSD1306_BLACK);
+
+    pantalla.drawLine(78, 20, 106, 18, SSD1306_WHITE);
+    pantalla.drawLine(78, 21, 106, 19, SSD1306_WHITE);
+
+    pantalla.fillRect(54, 46, 22, 3, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_exasperados(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 24, 26, 14, SSD1306_WHITE);
+    pantalla.fillRect(78, 24, 26, 14, SSD1306_WHITE);
+
+    pantalla.fillRect(34, 24, 8, 5, SSD1306_BLACK);
+    pantalla.fillRect(88, 24, 8, 5, SSD1306_BLACK);
+
+    pantalla.drawLine(22, 18, 50, 20, SSD1306_WHITE);
+    pantalla.drawLine(78, 20, 106, 18, SSD1306_WHITE);
+
+    pantalla.drawLine(55, 48, 63, 45, SSD1306_WHITE);
+    pantalla.drawLine(63, 45, 73, 48, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_despreciativos(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 28, 26, 7, SSD1306_WHITE);
+    pantalla.fillRect(78, 28, 26, 7, SSD1306_WHITE);
+
+    pantalla.fillRect(43, 28, 7, 7, SSD1306_BLACK);
+    pantalla.fillRect(96, 28, 7, 7, SSD1306_BLACK);
+
+    pantalla.drawLine(22, 22, 50, 19, SSD1306_WHITE);
+    pantalla.drawLine(78, 19, 106, 22, SSD1306_WHITE);
+
+    pantalla.drawLine(54, 48, 76, 46, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_incomodos(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(22, 23, 28, 16, SSD1306_WHITE);
+    pantalla.fillRect(78, 23, 28, 16, SSD1306_WHITE);
+
+    pantalla.fillRect(35, 28, 5, 6, SSD1306_BLACK);
+    pantalla.fillRect(89, 28, 5, 6, SSD1306_BLACK);
+
+    pantalla.drawLine(22, 17, 50, 21, SSD1306_WHITE);
+    pantalla.drawLine(78, 21, 106, 17, SSD1306_WHITE);
+
+    pantalla.drawLine(55, 47, 75, 47, SSD1306_WHITE);
+    pantalla.drawLine(58, 45, 72, 45, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_coquetos(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.drawLine(22, 31, 32, 35, SSD1306_WHITE);
+    pantalla.drawLine(32, 35, 42, 35, SSD1306_WHITE);
+    pantalla.drawLine(42, 35, 50, 31, SSD1306_WHITE);
+
+    pantalla.fillRect(78, 24, 26, 14, SSD1306_WHITE);
+    pantalla.fillRect(96, 28, 7, 7, SSD1306_BLACK);
+
+    pantalla.drawLine(24, 20, 48, 18, SSD1306_WHITE);
+    pantalla.drawLine(80, 19, 106, 22, SSD1306_WHITE);
+
+    pantalla.drawLine(54, 46, 62, 48, SSD1306_WHITE);
+    pantalla.drawLine(62, 48, 73, 46, SSD1306_WHITE);
+    pantalla.drawLine(73, 46, 80, 43, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_maliciosos(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(22, 25, 28, 13, SSD1306_WHITE);
+    pantalla.fillRect(78, 25, 28, 13, SSD1306_WHITE);
+
+    pantalla.drawLine(22, 25, 50, 32, SSD1306_BLACK);
+    pantalla.drawLine(78, 32, 106, 25, SSD1306_BLACK);
+
+    pantalla.fillRect(43, 29, 4, 6, SSD1306_BLACK);
+    pantalla.fillRect(81, 29, 4, 6, SSD1306_BLACK);
+
+    pantalla.drawLine(20, 17, 50, 21, SSD1306_WHITE);
+    pantalla.drawLine(78, 21, 108, 17, SSD1306_WHITE);
+
+    pantalla.drawLine(52, 47, 60, 49, SSD1306_WHITE);
+    pantalla.drawLine(60, 49, 70, 47, SSD1306_WHITE);
+    pantalla.drawLine(70, 47, 80, 42, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_sospechosos(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 25, 26, 13, SSD1306_WHITE);
+    pantalla.fillRect(78, 25, 26, 13, SSD1306_WHITE);
+
+    pantalla.drawLine(20, 24, 52, 31, SSD1306_BLACK);
+    pantalla.drawLine(76, 31, 108, 24, SSD1306_BLACK);
+    pantalla.drawLine(22, 22, 50, 28, SSD1306_WHITE);
+    pantalla.drawLine(78, 28, 106, 22, SSD1306_WHITE);
+
+    pantalla.fillRect(40, 30, 7, 6, SSD1306_BLACK);
+    pantalla.fillRect(81, 30, 7, 6, SSD1306_BLACK);
+
+    pantalla.display();
+}
+
+void dibujar_intelectuales(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 25, 26, 13, SSD1306_WHITE);
+    pantalla.fillRect(78, 25, 26, 13, SSD1306_WHITE);
+
+    pantalla.fillRect(35, 29, 5, 6, SSD1306_BLACK);
+    pantalla.fillRect(89, 29, 5, 6, SSD1306_BLACK);
+
+    pantalla.drawLine(22, 18, 50, 21, SSD1306_WHITE);
+    pantalla.drawLine(78, 21, 106, 18, SSD1306_WHITE);
+
+    pantalla.fillRect(55, 47, 20, 3, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_pensativos(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 24, 26, 14, SSD1306_WHITE);
+    pantalla.fillRect(78, 24, 26, 14, SSD1306_WHITE);
+
+    pantalla.fillRect(34, 24, 8, 6, SSD1306_BLACK);
+    pantalla.fillRect(89, 24, 8, 6, SSD1306_BLACK);
+
+    pantalla.drawLine(22, 17, 50, 13, SSD1306_WHITE);
+    pantalla.drawLine(78, 20, 106, 17, SSD1306_WHITE);
+
+    pantalla.drawLine(56, 47, 63, 45, SSD1306_WHITE);
+    pantalla.drawLine(63, 45, 71, 47, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_derretidos(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 23, 26, 13, SSD1306_WHITE);
+    pantalla.fillRect(78, 23, 26, 13, SSD1306_WHITE);
+
+    pantalla.fillRect(34, 28, 7, 7, SSD1306_BLACK);
+    pantalla.fillRect(88, 28, 7, 7, SSD1306_BLACK);
+
+    pantalla.fillRect(29, 34, 5, 7, SSD1306_WHITE);
+    pantalla.fillRect(39, 34, 4, 10, SSD1306_WHITE);
+    pantalla.fillRect(84, 34, 5, 10, SSD1306_WHITE);
+    pantalla.fillRect(94, 34, 5, 7, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_temblorosos(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 25, 26, 13, SSD1306_WHITE);
+    pantalla.fillRect(78, 25, 26, 13, SSD1306_WHITE);
+
+    pantalla.fillRect(37, 28, 7, 7, SSD1306_BLACK);
+    pantalla.fillRect(85, 29, 7, 7, SSD1306_BLACK);
+
+    pantalla.drawLine(18, 23, 14, 20, SSD1306_WHITE);
+    pantalla.drawLine(17, 32, 12, 34, SSD1306_WHITE);
+    pantalla.drawLine(108, 23, 112, 20, SSD1306_WHITE);
+    pantalla.drawLine(109, 32, 114, 34, SSD1306_WHITE);
+
+    pantalla.drawLine(52, 21, 55, 17, SSD1306_WHITE);
+    pantalla.drawLine(75, 21, 72, 17, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_aturdidos(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 27, 26, 9, SSD1306_WHITE);
+    pantalla.fillRect(78, 27, 26, 9, SSD1306_WHITE);
+
+    pantalla.fillRect(28, 29, 5, 5, SSD1306_BLACK);
+    pantalla.fillRect(98, 30, 5, 5, SSD1306_BLACK);
+
+    pantalla.drawLine(24, 27, 50, 32, SSD1306_BLACK);
+    pantalla.drawLine(78, 32, 104, 27, SSD1306_BLACK);
+
+    pantalla.drawLine(55, 47, 75, 47, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_desorientados(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(23, 22, 28, 15, SSD1306_WHITE);
+    pantalla.fillRect(78, 29, 27, 14, SSD1306_WHITE);
+
+    pantalla.fillRect(42, 25, 7, 7, SSD1306_BLACK);
+    pantalla.fillRect(80, 34, 7, 7, SSD1306_BLACK);
+
+    pantalla.drawLine(22, 17, 50, 19, SSD1306_WHITE);
+    pantalla.drawLine(78, 22, 106, 20, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_boquiabiertos(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(20, 21, 30, 19, SSD1306_WHITE);
+    pantalla.fillRect(78, 21, 30, 19, SSD1306_WHITE);
+
+    pantalla.fillRect(32, 27, 8, 8, SSD1306_BLACK);
+    pantalla.fillRect(90, 27, 8, 8, SSD1306_BLACK);
+
+    pantalla.drawLine(20, 14, 50, 11, SSD1306_WHITE);
+    pantalla.drawLine(78, 11, 108, 14, SSD1306_WHITE);
+
+    pantalla.drawCircle(64, 48, 6, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_sorprendidos_ocultos(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(22, 22, 28, 17, SSD1306_WHITE);
+    pantalla.fillRect(78, 22, 28, 17, SSD1306_WHITE);
+
+    pantalla.fillRect(34, 28, 7, 7, SSD1306_BLACK);
+    pantalla.fillRect(88, 28, 7, 7, SSD1306_BLACK);
+
+    pantalla.drawLine(22, 22, 50, 26, SSD1306_BLACK);
+    pantalla.drawLine(78, 26, 106, 22, SSD1306_BLACK);
+
+    pantalla.drawLine(22, 16, 50, 14, SSD1306_WHITE);
+    pantalla.drawLine(78, 14, 106, 16, SSD1306_WHITE);
+
+    pantalla.drawLine(58, 47, 70, 47, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_aliviados(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.drawLine(22, 30, 31, 34, SSD1306_WHITE);
+    pantalla.drawLine(31, 34, 40, 34, SSD1306_WHITE);
+    pantalla.drawLine(40, 34, 50, 30, SSD1306_WHITE);
+
+    pantalla.drawLine(78, 30, 88, 34, SSD1306_WHITE);
+    pantalla.drawLine(88, 34, 98, 34, SSD1306_WHITE);
+    pantalla.drawLine(98, 34, 106, 30, SSD1306_WHITE);
+
+    pantalla.drawLine(58, 46, 63, 48, SSD1306_WHITE);
+    pantalla.drawLine(63, 48, 69, 48, SSD1306_WHITE);
+    pantalla.drawLine(69, 48, 74, 46, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_agotados(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 24, 26, 13, SSD1306_WHITE);
+    pantalla.fillRect(78, 24, 26, 13, SSD1306_WHITE);
+
+    pantalla.drawLine(24, 24, 50, 31, SSD1306_BLACK);
+    pantalla.drawLine(78, 31, 104, 24, SSD1306_BLACK);
+
+    pantalla.fillRect(35, 31, 6, 5, SSD1306_BLACK);
+    pantalla.fillRect(89, 31, 6, 5, SSD1306_BLACK);
+
+    pantalla.drawRect(57, 45, 14, 6, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_bostezando(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 26, 26, 11, SSD1306_WHITE);
+    pantalla.fillRect(78, 26, 26, 11, SSD1306_WHITE);
+
+    pantalla.drawLine(24, 26, 50, 32, SSD1306_BLACK);
+    pantalla.drawLine(78, 32, 104, 26, SSD1306_BLACK);
+
+    pantalla.fillRect(35, 32, 6, 4, SSD1306_BLACK);
+    pantalla.fillRect(89, 32, 6, 4, SSD1306_BLACK);
+
+    pantalla.drawCircle(64, 48, 9, SSD1306_WHITE);
+    pantalla.fillCircle(64, 48, 5, SSD1306_BLACK);
+
+    pantalla.display();
+}
+
+void dibujar_firmes(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 25, 26, 13, SSD1306_WHITE);
+    pantalla.fillRect(78, 25, 26, 13, SSD1306_WHITE);
+
+    pantalla.fillRect(34, 28, 8, 7, SSD1306_BLACK);
+    pantalla.fillRect(88, 28, 8, 7, SSD1306_BLACK);
+
+    pantalla.fillRect(22, 17, 29, 3, SSD1306_WHITE);
+    pantalla.fillRect(77, 17, 29, 3, SSD1306_WHITE);
+
+    pantalla.fillRect(55, 47, 19, 3, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_serios_absolutos(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 28, 26, 7, SSD1306_WHITE);
+    pantalla.fillRect(78, 28, 26, 7, SSD1306_WHITE);
+
+    pantalla.fillRect(24, 20, 26, 3, SSD1306_WHITE);
+    pantalla.fillRect(78, 20, 26, 3, SSD1306_WHITE);
+
+    pantalla.fillRect(53, 47, 23, 3, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_silenciosos(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 25, 26, 13, SSD1306_WHITE);
+    pantalla.fillRect(78, 25, 26, 13, SSD1306_WHITE);
+
+    pantalla.fillRect(35, 29, 7, 6, SSD1306_BLACK);
+    pantalla.fillRect(89, 29, 7, 6, SSD1306_BLACK);
+
+    pantalla.drawLine(24, 19, 50, 19, SSD1306_WHITE);
+    pantalla.drawLine(78, 19, 104, 19, SSD1306_WHITE);
+
+    pantalla.drawLine(59, 48, 69, 48, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_indiferentes(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 27, 26, 9, SSD1306_WHITE);
+    pantalla.fillRect(78, 27, 26, 9, SSD1306_WHITE);
+
+    pantalla.fillRect(34, 29, 8, 7, SSD1306_BLACK);
+    pantalla.fillRect(88, 29, 8, 7, SSD1306_BLACK);
+
+    pantalla.drawLine(24, 20, 50, 20, SSD1306_WHITE);
+    pantalla.drawLine(78, 20, 104, 20, SSD1306_WHITE);
+
+    pantalla.fillRect(56, 47, 17, 3, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_decepcionados(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 25, 26, 13, SSD1306_WHITE);
+    pantalla.fillRect(78, 25, 26, 13, SSD1306_WHITE);
+
+    pantalla.fillRect(34, 32, 7, 6, SSD1306_BLACK);
+    pantalla.fillRect(88, 32, 7, 6, SSD1306_BLACK);
+
+    pantalla.drawLine(22, 17, 50, 21, SSD1306_WHITE);
+    pantalla.drawLine(78, 21, 106, 17, SSD1306_WHITE);
+
+    pantalla.drawLine(54, 47, 64, 49, SSD1306_WHITE);
+    pantalla.drawLine(64, 49, 76, 46, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_desanimados(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 25, 26, 13, SSD1306_WHITE);
+    pantalla.fillRect(78, 25, 26, 13, SSD1306_WHITE);
+
+    pantalla.fillRect(35, 32, 7, 6, SSD1306_BLACK);
+    pantalla.fillRect(89, 32, 7, 6, SSD1306_BLACK);
+
+    pantalla.drawLine(22, 18, 50, 23, SSD1306_WHITE);
+    pantalla.drawLine(78, 23, 106, 18, SSD1306_WHITE);
+
+    pantalla.drawLine(55, 49, 63, 46, SSD1306_WHITE);
+    pantalla.drawLine(63, 46, 72, 49, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_preocupados(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(23, 23, 28, 16, SSD1306_WHITE);
+    pantalla.fillRect(77, 23, 28, 16, SSD1306_WHITE);
+
+    pantalla.fillRect(35, 29, 6, 7, SSD1306_BLACK);
+    pantalla.fillRect(89, 29, 6, 7, SSD1306_BLACK);
+
+    pantalla.drawLine(20, 12, 34, 18, SSD1306_WHITE);
+    pantalla.drawLine(34, 18, 50, 13, SSD1306_WHITE);
+
+    pantalla.drawLine(78, 13, 94, 18, SSD1306_WHITE);
+    pantalla.drawLine(94, 18, 108, 12, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_angustiados(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(20, 20, 31, 20, SSD1306_WHITE);
+    pantalla.fillRect(77, 20, 31, 20, SSD1306_WHITE);
+
+    pantalla.fillRect(34, 28, 5, 6, SSD1306_BLACK);
+    pantalla.fillRect(91, 28, 5, 6, SSD1306_BLACK);
+
+    pantalla.drawLine(20, 14, 50, 20, SSD1306_WHITE);
+    pantalla.drawLine(78, 20, 108, 14, SSD1306_WHITE);
+
+    pantalla.drawLine(54, 47, 60, 44, SSD1306_WHITE);
+    pantalla.drawLine(60, 44, 68, 47, SSD1306_WHITE);
+    pantalla.drawLine(68, 47, 76, 44, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_aterrorizados(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(17, 18, 35, 23, SSD1306_WHITE);
+    pantalla.fillRect(75, 18, 35, 23, SSD1306_WHITE);
+
+    pantalla.fillRect(33, 27, 5, 5, SSD1306_BLACK);
+    pantalla.fillRect(91, 27, 5, 5, SSD1306_BLACK);
+
+    pantalla.drawLine(18, 10, 50, 15, SSD1306_WHITE);
+    pantalla.drawLine(78, 15, 110, 10, SSD1306_WHITE);
+
+    pantalla.drawRect(55, 43, 18, 9, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_completamente_mareados(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(20, 21, 31, 20, SSD1306_WHITE);
+    pantalla.fillRect(77, 21, 31, 20, SSD1306_WHITE);
+
+    pantalla.drawCircle(35, 31, 7, SSD1306_BLACK);
+    pantalla.drawCircle(93, 31, 7, SSD1306_BLACK);
+
+    pantalla.drawLine(35, 24, 35, 28, SSD1306_WHITE);
+    pantalla.drawLine(35, 34, 40, 31, SSD1306_WHITE);
+
+    pantalla.drawLine(93, 24, 93, 28, SSD1306_WHITE);
+    pantalla.drawLine(93, 34, 98, 31, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_locos(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(22, 21, 28, 19, SSD1306_WHITE);
+    pantalla.fillRect(80, 27, 24, 13, SSD1306_WHITE);
+
+    pantalla.fillRect(42, 25, 7, 7, SSD1306_BLACK);
+    pantalla.fillRect(81, 30, 7, 7, SSD1306_BLACK);
+
+    pantalla.drawLine(20, 15, 50, 20, SSD1306_WHITE);
+    pantalla.drawLine(80, 19, 106, 14, SSD1306_WHITE);
+
+    pantalla.drawLine(51, 45, 58, 49, SSD1306_WHITE);
+    pantalla.drawLine(58, 49, 65, 44, SSD1306_WHITE);
+    pantalla.drawLine(65, 44, 72, 49, SSD1306_WHITE);
+    pantalla.drawLine(72, 49, 81, 44, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_mirando_fijamente(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(19, 20, 32, 21, SSD1306_WHITE);
+    pantalla.fillRect(77, 20, 32, 21, SSD1306_WHITE);
+
+    pantalla.fillRect(31, 27, 9, 9, SSD1306_BLACK);
+    pantalla.fillRect(89, 27, 9, 9, SSD1306_BLACK);
+
+    pantalla.drawLine(20, 14, 50, 14, SSD1306_WHITE);
+    pantalla.drawLine(78, 14, 108, 14, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_vacios(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(22, 22, 29, 18, SSD1306_BLACK);
+    pantalla.fillRect(77, 22, 29, 18, SSD1306_BLACK);
+
+    pantalla.drawRect(22, 22, 29, 18, SSD1306_WHITE);
+    pantalla.drawRect(77, 22, 29, 18, SSD1306_WHITE);
+
+    pantalla.fillRect(55, 47, 20, 3, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_alienigenas(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRoundRect(20, 17, 31, 28, 7, SSD1306_WHITE);
+    pantalla.fillRoundRect(77, 17, 31, 28, 7, SSD1306_WHITE);
+
+    pantalla.fillRect(34, 27, 4, 8, SSD1306_BLACK);
+    pantalla.fillRect(90, 27, 4, 8, SSD1306_BLACK);
+
+    pantalla.display();
+}
+
+void dibujar_roboticos(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(22, 24, 29, 15, SSD1306_WHITE);
+    pantalla.fillRect(77, 24, 29, 15, SSD1306_WHITE);
+
+    pantalla.fillRect(34, 28, 8, 7, SSD1306_BLACK);
+    pantalla.fillRect(89, 28, 8, 7, SSD1306_BLACK);
+
+    pantalla.drawLine(26, 20, 47, 20, SSD1306_WHITE);
+    pantalla.drawLine(81, 20, 102, 20, SSD1306_WHITE);
+
+    pantalla.fillRect(56, 47, 17, 3, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_fantasmales(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(23, 22, 28, 18, SSD1306_WHITE);
+    pantalla.fillRect(77, 22, 28, 18, SSD1306_WHITE);
+
+    pantalla.fillRect(35, 28, 5, 6, SSD1306_BLACK);
+    pantalla.fillRect(89, 28, 5, 6, SSD1306_BLACK);
+
+    pantalla.drawLine(58, 48, 70, 48, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_inocentes(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(22, 22, 29, 18, SSD1306_WHITE);
+    pantalla.fillRect(77, 22, 29, 18, SSD1306_WHITE);
+
+    pantalla.fillRect(33, 28, 9, 9, SSD1306_BLACK);
+    pantalla.fillRect(88, 28, 9, 9, SSD1306_BLACK);
+
+    pantalla.drawLine(22, 16, 35, 13, SSD1306_WHITE);
+    pantalla.drawLine(35, 13, 50, 16, SSD1306_WHITE);
+
+    pantalla.drawLine(78, 16, 93, 13, SSD1306_WHITE);
+    pantalla.drawLine(93, 13, 106, 16, SSD1306_WHITE);
+
+    pantalla.drawLine(58, 46, 63, 48, SSD1306_WHITE);
+    pantalla.drawLine(63, 48, 69, 48, SSD1306_WHITE);
+    pantalla.drawLine(69, 48, 74, 46, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_demoníacos(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(22, 24, 28, 15, SSD1306_WHITE);
+    pantalla.fillRect(78, 24, 28, 15, SSD1306_WHITE);
+
+    pantalla.drawLine(22, 24, 50, 32, SSD1306_BLACK);
+    pantalla.drawLine(78, 32, 106, 24, SSD1306_BLACK);
+
+    pantalla.fillRect(35, 26, 5, 12, SSD1306_BLACK);
+    pantalla.fillRect(89, 26, 5, 12, SSD1306_BLACK);
+
+    pantalla.drawLine(20, 17, 50, 21, SSD1306_WHITE);
+    pantalla.drawLine(78, 21, 108, 17, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_al_borde_de_llorar(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(21, 21, 30, 19, SSD1306_WHITE);
+    pantalla.fillRect(77, 21, 30, 19, SSD1306_WHITE);
+
+    pantalla.fillRect(32, 27, 9, 9, SSD1306_BLACK);
+    pantalla.fillRect(88, 27, 9, 9, SSD1306_BLACK);
+
+    pantalla.fillRect(24, 39, 4, 6, SSD1306_WHITE);
+    pantalla.fillRect(101, 39, 4, 6, SSD1306_WHITE);
+
+    pantalla.drawLine(21, 15, 50, 20, SSD1306_WHITE);
+    pantalla.drawLine(78, 20, 107, 15, SSD1306_WHITE);
+
+    pantalla.drawLine(57, 48, 63, 46, SSD1306_WHITE);
+    pantalla.drawLine(63, 46, 70, 48, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_llorando(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(22, 22, 29, 18, SSD1306_WHITE);
+    pantalla.fillRect(77, 22, 29, 18, SSD1306_WHITE);
+
+    pantalla.fillRect(33, 28, 8, 8, SSD1306_BLACK);
+    pantalla.fillRect(88, 28, 8, 8, SSD1306_BLACK);
+
+    pantalla.fillRect(27, 38, 7, 10, SSD1306_WHITE);
+    pantalla.fillRect(95, 38, 7, 10, SSD1306_WHITE);
+
+    pantalla.fillRect(29, 48, 3, 5, SSD1306_WHITE);
+    pantalla.fillRect(97, 48, 3, 5, SSD1306_WHITE);
+
+    pantalla.drawRect(57, 44, 15, 8, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_llorando_de_risa(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.drawLine(22, 29, 31, 35, SSD1306_WHITE);
+    pantalla.drawLine(31, 35, 40, 35, SSD1306_WHITE);
+    pantalla.drawLine(40, 35, 50, 29, SSD1306_WHITE);
+
+    pantalla.drawLine(78, 29, 88, 35, SSD1306_WHITE);
+    pantalla.drawLine(88, 35, 98, 35, SSD1306_WHITE);
+    pantalla.drawLine(98, 35, 106, 29, SSD1306_WHITE);
+
+    pantalla.fillRect(28, 35, 5, 8, SSD1306_WHITE);
+    pantalla.fillRect(96, 35, 5, 8, SSD1306_WHITE);
+
+    pantalla.fillRoundRect(48, 43, 32, 10, 3, SSD1306_WHITE);
+    pantalla.fillRect(54, 43, 20, 4, SSD1306_BLACK);
+
+    pantalla.display();
+}
+
 void actualizar_emocion(enum e_Emociones nuevo_estado)
 {
     emocion_actual = nuevo_estado;
@@ -1493,5 +2671,3 @@ enum e_Emociones obtener_emocion(void)
 {
     return emocion_actual;
 }
-
-
