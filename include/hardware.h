@@ -37,6 +37,13 @@ extern "C" {
 void inicializar_hardware(void);
 void dibujar_emocion(Emotion *sentimiento);
 int medir_distancia();
+void inicializar_pantalla(void);
+void inicializar_sensor_movimiento(void);
+void inicializar_amplificador(void);
+void inicializar_microfono(void);
+void inicializar_microsd(void);
+void inicializar_touch(void);
+void inicializar_interruptor(void);
 
 #ifdef __cplusplus
 }

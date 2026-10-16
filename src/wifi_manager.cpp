@@ -1,68 +1,57 @@
 #include "wifi_manager.h"
-#include <Arduino.h>
 #include <WiFi.h>
+#include <WiFiManager.h> 
+#include "status.h"     
 #include <stdio.h>
 
 WiFiUDP udp;
 const int PUERTO_UDP = 4242;
 
-void inicializar_wifi(const char* ssid, const char* password) 
+void configModeCallback(WiFiManager *myWiFiManager) 
 {
-    printf("\nConectando a la red Wi-Fi: %s\n", ssid);
+    printf("Modo Configuración activado...\n Conéctate a la red: %s\n", myWiFiManager->getConfigPortalSSID().c_str());
     
-    // Configura el ESP32 como estación
-    WiFi.mode(WIFI_STA);
-    WiFi.begin(ssid, password);
+    dibujar_error_wifi(); 
+}
 
-    // El código se detiene aquí hasta que el router entregue una IP
-    while (WiFi.status() != WL_CONNECTED) 
+void inicializar_wifi(void) 
+{
+    WiFiManager wifiManager;
+
+    wifiManager.setAPCallback(configModeCallback);
+
+    printf("\nBuscando redes Wi-Fi guardadas en memoria...\n");
+
+    dibujar_buscando_wifi();
+
+    if (!wifiManager.autoConnect("Robot-Asistente")) 
     {
-        delay(500);
-        printf(".");
+        printf("Fallo al conectar y tiempo de espera agotado\n");
+        
+        ESP.restart();
+        delay(1000);
     }
 
-    printf("\n¡Wi-Fi conectado exitosamente!\n");
-
-    // Imprimimos la IP para saber a qué dirección enviar los datos desde Python
+    printf("\nWi-Fi conectado exitosamente!\n");
     printf("Dirección IP asignada: %s\n", WiFi.localIP().toString().c_str());
+    
+    dibujar_conexion_exitosa();
 }
 
 int wifi_conectado(void) 
 {
-    if (WiFi.status() == WL_CONNECTED) {
-        return 1;
-    } else {
-        return 0;
+    if (WiFi.status() == WL_CONNECTED) 
+    { 
+        return 1; 
+    } 
+    else 
+    {
+        return 0; 
     }
 }
 
 void inicializar_udp(void) 
 {
-    udp.begin(PUERTO_UDP);
-    printf("Robot escuchando ondas cerebrales en el puerto UDP: %d\n", PUERTO_UDP);
-}
-
-int escuchar_estado_udp(void) 
-{
-    int tamano_paquete = udp.parsePacket();
-    
-    // Si llegan datos
-    if (tamano_paquete) 
-    {
-        char buffer[255];
-        int longitud = udp.read(buffer, 255);
-
-        if (longitud > 0) 
-        {
-            buffer[longitud] = '\0'; 
-        }
-        
-        // Convierte el texto recibido a un número entero
-
-        int nuevo_estado = atoi(buffer);
-        printf("Señal recibida: %d\n", nuevo_estado);
-        return nuevo_estado;
-    }
-    
-    return -1; //no hay datos nuevos en este milisegundo
+    udp.begin(PUERTO_UDP); 
+    printf("Robot escuchando comandos en el puerto UDP: %d\n", PUERTO_UDP);
 }

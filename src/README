@@ -1,0 +1,6 @@
+# Uso del Wi-FI
+
+1. Intento de conexión (Ojos de carga/espera): Al encenderse, el ESP32 busca en su memoria interna las últimas credenciales Wi-Fi guardadas e intenta conectarse.
+2. Fallo y Modo AP (Ojos de alerta/búsqueda): Si la red no existe o es la primera vez que se enciende, el ESP32 se transforma temporalmente en un router (Access Point) emitiendo su propia red (por ejemplo, Robot-Config). La pantalla OLED cambia inmediatamente a la emoción buscando para indicarle al usuario que requiere atención.
+3. Configuración del usuario: El usuario se conecta a la red Robot-Config con su celular o PC. Se abre automáticamente una página web donde selecciona el Wi-Fi de su casa y escribe la contraseña.
+4. Reinicio y Éxito (Ojos felices): El ESP32 guarda los datos en su memoria flash, se reinicia y se conecta a la red local, mostrando ojos felices y activando la escucha UDP.
