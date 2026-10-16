@@ -36,7 +36,7 @@ void dibujar_mirada_reojo(void)
     // Boca seria
     pantalla.fillRect(52, 44, 24, 4, SSD1306_WHITE);
 
-    // Mostrar el dibujo en la pantalla OLED
+    // Mostrar el dibujo en la pantalla 
     pantalla.display();
 }
 
@@ -2496,7 +2496,7 @@ void dibujar_inocentes(void)
     pantalla.display();
 }
 
-void dibujar_demoniacos(void)
+void dibujar_ojos_demoniacos(void)
 {
     pantalla.clearDisplay();
 
@@ -2677,6 +2677,36 @@ void dibujar_conexion_exitosa(void)
 
     pantalla.drawLine(91, 43, 97, 49, SSD1306_WHITE);
     pantalla.drawLine(97, 49, 108, 36, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
+void dibujar_ojos_enojados(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 25, 26, 14, SSD1306_WHITE);
+
+    pantalla.fillRect(38, 28, 8, 8, SSD1306_BLACK);
+
+    pantalla.drawLine(20, 12, 50, 22, SSD1306_WHITE);
+    pantalla.drawLine(20, 13, 50, 23, SSD1306_WHITE);
+
+    pantalla.drawLine(24, 38, 50, 34, SSD1306_BLACK);
+    pantalla.drawLine(24, 39, 50, 35, SSD1306_BLACK);
+
+    pantalla.fillRect(78, 25, 26, 14, SSD1306_WHITE);
+
+    pantalla.fillRect(82, 28, 8, 8, SSD1306_BLACK);
+
+    pantalla.drawLine(78, 22, 108, 12, SSD1306_WHITE);
+    pantalla.drawLine(78, 23, 108, 13, SSD1306_WHITE);
+
+    pantalla.drawLine(78, 34, 104, 38, SSD1306_BLACK);
+    pantalla.drawLine(78, 35, 104, 39, SSD1306_BLACK);
+
+    pantalla.drawLine(54, 49, 64, 45, SSD1306_WHITE);
+    pantalla.drawLine(64, 45, 74, 49, SSD1306_WHITE);
 
     pantalla.display();
 }

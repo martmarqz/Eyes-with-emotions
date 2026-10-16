@@ -147,7 +147,9 @@ void dibujar_inocentes(void);
 void dibujar_al_borde_de_llorar(void);
 void dibujar_llorando(void);
 void dibujar_llorando_de_risa(void);
-void dibujar_demoniacos(void);
+void dibujar_ojos_demoniacos(void);
+void dibujar_ojos_desquiciados(void);
+void dibujar_ojos_enojados(void);
 
 void dibujar_ojos_buscando(void);
 void dibujar_buscando_wifi(void);
