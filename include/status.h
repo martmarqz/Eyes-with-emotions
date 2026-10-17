@@ -46,16 +46,6 @@ enum e_Emociones
     GUINO
 };
 
-typedef void (*FuncionDibujoEmocion)(void);
-
-typedef struct s_Emotion
-{
-    FuncionDibujoEmocion dibujar;
-    int volumenAltavoz;
-    int ojoDerecho[8][8];
-    int ojoIzquierdo[8][8];
-} Emotion;
-
 //FUNCIONES
 void dibujar_mirada_reojo(void);
 void dibujar_ojos_descansando(void);
@@ -150,6 +140,7 @@ void dibujar_llorando_de_risa(void);
 void dibujar_ojos_demoniacos(void);
 void dibujar_ojos_desquiciados(void);
 void dibujar_ojos_enojados(void);
+void dibujar_ojos_criticos(void);
 
 void dibujar_ojos_buscando(void);
 void dibujar_buscando_wifi(void);
@@ -159,48 +150,6 @@ void dibujar_conexion_exitosa(void);
 void actualizar_emocion(enum e_Emociones nuevo_estado);
 
 enum e_Emociones obtener_emocion(void);
-
-
-/* Emociones conservadas para mantener compatibles animation.c y main.cpp. */
-extern Emotion ojosDescansando;
-extern Emotion ojosEnamorados;
-extern Emotion ojosCansados;
-extern Emotion ojosSorprendidos;
-extern Emotion ojosNeutros;
-extern Emotion ojosFelices;
-extern Emotion ojosBorrachos;
-extern Emotion ojosAsustados;
-extern Emotion ojosFuriosos;
-extern Emotion ojosExclamacion;
-extern Emotion ojosHeridos;
-extern Emotion ojosMiedo;
-extern Emotion ojosMolestos;
-extern Emotion ojosEscuchando;
-extern Emotion ojosAsqueados;
-extern Emotion ojosConfundidos;
-extern Emotion ojosInteresados;
-extern Emotion ojosAburridos;
-extern Emotion ojosPoderosos;
-extern Emotion ojosPacificos;
-extern Emotion ojosAnsiosos;
-extern Emotion ojosCulpables;
-extern Emotion ojosCriticos;
-extern Emotion ojosEnojados;
-extern Emotion ojosTristes;
-extern Emotion ojosHumillados;
-extern Emotion ojosRechazados;
-extern Emotion ojosCelosos;
-extern Emotion ojosOdiosos;
-extern Emotion ojosDesquisiados;
-extern Emotion ojosVengativos;
-extern Emotion ojosFrustrados;
-extern Emotion ojosDistantes;
-extern Emotion ojosBailarin;
-extern Emotion ojosHalloween;
-extern Emotion ojosPesos;
-extern Emotion ojosGuino;
-
-
 
 #ifdef __cplusplus
 }

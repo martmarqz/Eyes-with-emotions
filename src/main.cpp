@@ -1,42 +1,56 @@
 #include <Arduino.h>
+
 #include "hardware.h"
-#include "animation.h"
-#include "status.h"
+#include "voice.h"
+#include "command_router.h"
 #include "wifi_manager.h"
 
-//pantalla de 128 px de alto y 64 px de ancho, con 8x8 px por ojo, dejando 32 px de espacio entre los ojos
-
-void setup() 
+void setup()
 {
-// Iniciar la comunicación serie a 115200 baudios para poder leer 
-Serial.begin(115200);
-Serial.println("Iniciando sistema del robot...");
+    Serial.begin(115200);
 
-inicializar_hardware(); 
-dibujar_emocion(&ojosNeutros);
-//inicializar_wifi("Matiii", "integracion123"); //Nombre y password internet 
-//inicializar_udp(); 
+    inicializar_hardware();
+
+    inicializar_wifi();
+
+    inicializar_udp();
+
+    voz_inicializar();
+
+    Serial.println(
+        "Sistema de voz listo"
+    );
 }
 
-void loop() 
+void loop()
 {
-// Aquí ocurrirá el ciclo de vida continuo del robot:
-// 1. Leer los sensores (micrófono INMP441, sensor de distancia)
-// 2. Procesar esa información y actualizar 'estado_actual' (status.c)
-// 3. Dibujar los ojos en la pantalla basándose en el estado (animation.c)
-int estado_mental = escuchar_estado_udp();
-int estadoActual = 0; 
+    if(wifi_conectado())
+    {
+        if(digitalRead(SWITCH_PIN) == LOW)
+        {
+            Serial.println("Escuchando...");
 
-if(estadoActual==0)
-{
-parpadeo();
-}
-else
-{
-dibujar_emocion(&ojosEnamorados);
-}
+            bool resultado = voz_procesar();
 
-reflejo_de_acercamiento();
+            if(resultado)
+            {
+                Serial.println("Comando ejecutado");
+            }
+            else
+            {
+                Serial.println("Error procesando voz");
+            }
 
-delay(3000); 
+            while(digitalRead(SWITCH_PIN) == LOW)
+            {
+                delay(10);
+            }
+
+            delay(200);
+        }
+    }
+
+    //actualizar_animacion();
+
+    delay(10);
 }

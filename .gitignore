@@ -6,3 +6,4 @@
 *.out
 gazelle-env/
 robot_env/
+server_IA/

@@ -6,7 +6,7 @@ extern "C" {
 #endif
 
 //FUNCIONES
-void inicializar_wifi(const char* ssid, const char* password);
+void inicializar_wifi(void);
 int wifi_conectado(void);
 void inicializar_udp(void);
 int escuchar_estado_udp(void);

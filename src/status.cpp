@@ -2711,6 +2711,25 @@ void dibujar_ojos_enojados(void)
     pantalla.display();
 }
 
+void dibujar_ojos_criticos(void)
+{
+    pantalla.clearDisplay();
+
+    pantalla.fillRect(24, 27, 26, 10, SSD1306_WHITE);
+    pantalla.fillRect(78, 27, 26, 10, SSD1306_WHITE);
+
+    pantalla.fillRect(42, 28, 8, 8, SSD1306_BLACK);
+    pantalla.fillRect(78, 28, 8, 8, SSD1306_BLACK);
+
+    pantalla.drawLine(20, 16, 50, 21, SSD1306_WHITE);
+    pantalla.drawLine(78, 21, 108, 16, SSD1306_WHITE);
+
+    pantalla.drawLine(54, 46, 62, 48, SSD1306_WHITE);
+    pantalla.drawLine(62, 48, 72, 46, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
 void actualizar_emocion(enum e_Emociones nuevo_estado)
 {
     emocion_actual = nuevo_estado;
