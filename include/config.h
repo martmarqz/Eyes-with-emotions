@@ -1,7 +1,7 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#define IA_SERVER_URL "http://192.168.1.100:8000/robot/voz"
+#define IA_SERVER_URL "http://192.168.1.87:8000/robot/voz"
 
 #define VOZ_DURACION_MS 5000
 
