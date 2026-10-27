@@ -10,3 +10,4 @@ robot_env/
 __pychache__/
 *.pyc
 venv/
+gazelle/
