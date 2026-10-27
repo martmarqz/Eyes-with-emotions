@@ -73,11 +73,6 @@ void inicializar_microfono(void)
     Serial.println("Inicializando microfono analogico KS0035...");
 }
 
-int leer_microfono(void)
-{
-    return analogRead(MICROPHONE_PIN);
-}
-
 void inicializar_microsd(void)
 {
     SPI.begin(SD_SCK, SD_MISO, SD_MOSI, SD_CS);

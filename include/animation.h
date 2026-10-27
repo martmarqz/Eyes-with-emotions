@@ -6,7 +6,20 @@ extern "C" {
 #endif
 
 //FUNCIONES
+/**
+ * @brief Actualiza las animaciones
+ * 
+ * @author Martina Marquez
+ * 
+ */
 void actualizar_animacion(void);
+
+/**
+ * @brief Animaciones de ojos
+ * 
+ * @author Martina Marquez
+ * 
+ */
 void parpadeo(void);
 void reflejo_de_acercamiento(void);
 void guino(void);

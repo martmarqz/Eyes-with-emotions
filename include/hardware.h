@@ -31,16 +31,76 @@ extern "C" {
 #endif
 
 //FUNCIONES
+
+/**
+ * @brief Inicializa todo el hardware
+ * 
+ * @author Martina Marquez
+ */
 void inicializar_hardware(void);
+
+/**
+ * @brief mide la distancia del sensor de movimiento
+ * 
+ * @return int 
+ * 
+ * @author Martina Marquez
+ */
 int medir_distancia();
+
+/**
+ * @brief Inicializa la OLED
+ * 
+ * @author Martina Marquez
+ */
 void inicializar_pantalla(void);
+
+/**
+ * @brief Inicializa el sensor de movimiento
+ * 
+ * @author Martina Marquez
+ * 
+ */
 void inicializar_sensor_movimiento(void);
+
+/**
+ * @brief Inicializa el amplificador
+ * 
+ * @author Martina Marquez
+ * 
+ */
 void inicializar_amplificador(void);
+
+/**
+ * @brief Inicializa el microfono
+ * 
+ * @author Martina Marquez
+ * 
+ */
 void inicializar_microfono(void);
+
+/**
+ * @brief Inicializa el lector microSD
+ * 
+ * @author Martina Marquez
+ */
 void inicializar_microsd(void);
+
+/**
+ * @brief Inicializa el sensor touch
+ * 
+ * @author Martina Marquez
+ * 
+ */
 void inicializar_touch(void);
+
+/**
+ * @brief Inicializa el interruptor
+ * 
+ * @author Martina Marquez
+ * 
+ */
 void inicializar_interruptor(void);
-int leer_microfono(void);
 
 #ifdef __cplusplus
 }
