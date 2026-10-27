@@ -4,6 +4,7 @@
 #include "voice.h"
 #include "command_router.h"
 #include "wifi_manager.h"
+#include "animation.h"
 
 void setup()
 {
@@ -50,7 +51,7 @@ void loop()
         }
     }
 
-    //actualizar_animacion();
+    actualizar_animacion();
 
     delay(10);
 }

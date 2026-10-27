@@ -5,6 +5,11 @@
 // Animacion completa desde el inicio del video.
 // OLED SSD1306 128x64 monocromatica.
 // Los tonos de los gatos se representan mediante dithering.
+/**
+ * @brief Frames de la animacion especial de los gatos
+ * 
+ * @author Martina Marquez
+ */
 
 const unsigned char gatos_frame_0[] PROGMEM = {
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
