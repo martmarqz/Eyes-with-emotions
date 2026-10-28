@@ -5,6 +5,7 @@
 #include "command_router.h"
 #include "wifi_manager.h"
 #include "animation.h"
+#include "sensores.h"
 
 void setup()
 {
@@ -18,6 +19,8 @@ void setup()
 
     voz_inicializar();
 
+    inicializar_sensores();
+
     Serial.println(
         "Sistema de voz listo"
     );
@@ -25,6 +28,32 @@ void setup()
 
 void loop()
 {
+    //Proximidad
+    float distancia = medir_distancia();
+    if(distancia>0)
+    {
+        Serial.printf("Distancia: ½.2f cm | ", distancia);
+    }
+    else
+    {
+        Serial.print("Distancia: No detectada | ");
+    }
+
+    //Micrófono
+    int mic_val = obtener_nivel_mic();
+    Serial.printf("Mic ADC: %d | ", mic_val);
+
+    //Touch
+    if(touch_presionado())
+    {
+        Serial.println("Touch presionado");
+    }
+    else
+    {
+        Serial.println("Touch no presionado");  
+    }
+    delay(200);
+
     if(wifi_conectado())
     {
         if(digitalRead(SWITCH_PIN) == LOW)
@@ -55,3 +84,4 @@ void loop()
 
     delay(10);
 }
+
