@@ -14,4 +14,4 @@ def convertir_audio_a_texto(audio: bytes) -> str: #Recibe el audio y lo transcri
     print(f"Texto escuchado: {texto}") #Imprime lo que entendio la maquina
     return texto #Entrega el texto final
 
-# Oido del programa
+# Oido del programa              "respuest
