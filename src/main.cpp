@@ -6,6 +6,7 @@
 #include "wifi_manager.h"
 #include "animation.h"
 #include "sensores.h"
+#include "reactividad.h"
 
 void setup()
 {
@@ -28,11 +29,12 @@ void setup()
 
 void loop()
 {
+    actualizar_emocion_por_proximidad();
     //Proximidad
     float distancia = medir_distancia();
     if(distancia>0)
     {
-        Serial.printf("Distancia: ½.2f cm | ", distancia);
+        Serial.printf("Distancia: %.2f cm | ", distancia);
     }
     else
     {
@@ -82,6 +84,6 @@ void loop()
 
     actualizar_animacion();
 
-    delay(10);
+    delay(100);
 }
 
