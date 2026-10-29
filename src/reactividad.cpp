@@ -11,6 +11,13 @@
 
  void actualizar_emocion_por_proximidad(void)
  {
+
+    if(touch_presionado())
+    {
+        //Si el touch està presionado, dibuja ojos de furia
+        dibujar_ojos_demoniacos();
+        return;
+    }   
     float distancia = medir_distancia();
 
     if(distancia>0)
