@@ -13,4 +13,6 @@
 
 #define IA_TIMEOUT_MS 30000
 
+#define USAR_SENSOR_DISTANCIA 0
+
 #endif

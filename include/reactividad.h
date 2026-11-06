@@ -7,6 +7,6 @@
  #ifndef REACTIVIDAD_H
  #define REACTIVIDAD_H
 
- void actualizar_emocion_por_proximidad(void);
+ void actualizar_emocion_por_proximidad(int distancia);
 
  #endif

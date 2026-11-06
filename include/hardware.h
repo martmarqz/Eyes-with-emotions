@@ -14,7 +14,7 @@
 #define DISPLAY_SCL 9
 #define MOVE_SENSOR_ECHO 5
 #define MOVE_SENSOR_TRIG 4
-#define TOUCH_PIN 32
+#define TOUCH_PIN 7
 
 #define SD_SCK 12
 #define SD_MISO 13
@@ -101,6 +101,7 @@ void inicializar_touch(void);
  * 
  */
 void inicializar_interruptor(void);
+int leer_microfono(void);
 
 #ifdef __cplusplus
 }

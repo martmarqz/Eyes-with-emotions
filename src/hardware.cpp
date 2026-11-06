@@ -91,7 +91,7 @@ void inicializar_touch(void)
 {
     pinMode(TOUCH_PIN, INPUT);
 
-    Serial.println("Iniciando sensor touch...");
+    Serial.println("Iniciando sensor touch (TTP223)...");
 }
 
 void inicializar_amplificador(void)
@@ -112,7 +112,7 @@ void inicializar_interruptor(void)
 
 int medir_distancia()
 {
-    long duracion;
+    /*long duracion;
     int distancia;
 
     digitalWrite(MOVE_SENSOR_TRIG, LOW);
@@ -127,5 +127,23 @@ int medir_distancia()
 
     distancia = duracion / 58;
 
-    return distancia;
+    return distancia;*/
+    digitalWrite(MOVE_SENSOR_TRIG, LOW);
+    delayMicroseconds(2);
+    digitalWrite(MOVE_SENSOR_TRIG, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(MOVE_SENSOR_TRIG, LOW);
+
+    long duracion = pulseIn(MOVE_SENSOR_ECHO, HIGH, 25000);
+
+    if (duracion == 0) 
+    {
+        return -1;
+    }
+    return duracion / 58; //cm
+}
+
+int leer_microfono(void)
+{
+    return analogRead(MICROPHONE_PIN);
 }

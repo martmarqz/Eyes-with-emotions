@@ -7,12 +7,16 @@
 #include "animation.h"
 #include "sensores.h"
 #include "reactividad.h"
+#include "config.h"
+#include "special.h"
 
 void setup()
 {
     Serial.begin(115200);
 
     inicializar_hardware();
+
+    inicializar_especial();
 
     inicializar_wifi();
 
@@ -29,60 +33,38 @@ void setup()
 
 void loop()
 {
-    actualizar_emocion_por_proximidad();
-    //Proximidad
-    float distancia = medir_distancia();
-    if(distancia>0)
-    {
-        Serial.printf("Distancia: %.2f cm | ", distancia);
-    }
+    #if USAR_SENSOR_DISTANCIA
+    int distancia = medir_distancia();
+#else
+    int distancia = -1; // sensor desactivado: siempre reposo
+#endif
+
+    actualizar_emocion_por_proximidad(distancia);
+
+    if (distancia > 0)
+        Serial.printf("Distancia: %d cm | ", distancia);
     else
-    {
         Serial.print("Distancia: No detectada | ");
-    }
 
-    //Micrófono
-    int mic_val = obtener_nivel_mic();
-    Serial.printf("Mic ADC: %d | ", mic_val);
+    Serial.printf("Mic ADC: %d | ", obtener_nivel_mic());
+    Serial.println(touch_presionado() ? "Touch presionado" : "Touch no presionado");
 
-    //Touch
-    if(touch_presionado())
+    if (wifi_conectado() && digitalRead(SWITCH_PIN) == LOW)
     {
-        Serial.println("Touch presionado");
-    }
-    else
-    {
-        Serial.println("Touch no presionado");  
-    }
-    delay(200);
+        Serial.println("Escuchando...");
 
-    if(wifi_conectado())
-    {
-        if(digitalRead(SWITCH_PIN) == LOW)
+        if (voz_procesar())
+            Serial.println("Comando ejecutado");
+        else
+            Serial.println("Error procesando voz");
+
+        while (digitalRead(SWITCH_PIN) == LOW)
         {
-            Serial.println("Escuchando...");
-
-            bool resultado = voz_procesar();
-
-            if(resultado)
-            {
-                Serial.println("Comando ejecutado");
-            }
-            else
-            {
-                Serial.println("Error procesando voz");
-            }
-
-            while(digitalRead(SWITCH_PIN) == LOW)
-            {
-                delay(10);
-            }
-
-            delay(200);
+            delay(10);
         }
-    }
 
-    actualizar_animacion();
+        delay(200);
+    }
 
     delay(100);
 }

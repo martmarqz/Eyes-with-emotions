@@ -38,7 +38,13 @@ int obtener_nivel_mic(void)
 
 bool touch_presionado(void)
 {
-    uint32_t valor_touch = touchRead(TOUCH_PIN);
-    return (valor_touch > UMBRAL_TOUCH);
+    return digitalRead(TOUCH_PIN) == HIGH; // Asumiendo que el touch esta siendo tocado
+
+    //Serial.printf("[touchRead=%u digital=%d] ",
+    //              touchRead(TOUCH_PIN), digitalRead(TOUCH_PIN));
+    //return false;
+
+    //uint32_t valor_touch = touchRead(TOUCH_PIN);
+    //return (valor_touch > UMBRAL_TOUCH);
 }
    
