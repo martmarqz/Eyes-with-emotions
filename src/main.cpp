@@ -9,6 +9,7 @@
 #include "reactividad.h"
 #include "config.h"
 #include "special.h"
+#include "status.h"
 
 void setup()
 {
@@ -49,22 +50,31 @@ void loop()
     Serial.printf("Mic ADC: %d | ", obtener_nivel_mic());
     Serial.println(touch_presionado() ? "Touch presionado" : "Touch no presionado");
 
-    if (wifi_conectado() && digitalRead(SWITCH_PIN) == LOW)
-    {
-        Serial.println("Escuchando...");
+       if (wifi_conectado() && digitalRead(SWITCH_PIN) == LOW)
+      {
+          Serial.println("Escuchando... habla ahora (5 segundos)");
+          dibujar_ojos_escuchando();
 
-        if (voz_procesar())
-            Serial.println("Comando ejecutado");
-        else
-            Serial.println("Error procesando voz");
+          bool resultado = voz_procesar();
 
-        while (digitalRead(SWITCH_PIN) == LOW)
-        {
-            delay(10);
-        }
+          if (resultado)
+          {
+              Serial.println("Comando ejecutado");
+          }
+          else
+          {
+              Serial.println("Error procesando voz");
+              dibujar_ojos_confundidos();
+          }
 
-        delay(200);
-    }
+          reactividad_mostrar_emocion_temporal(6000);
+
+          while (digitalRead(SWITCH_PIN) == LOW)
+          {
+              delay(10);
+          }
+          delay(200);
+      }
 
     delay(100);
 }

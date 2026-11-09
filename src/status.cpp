@@ -40,6 +40,28 @@ void dibujar_mirada_reojo(void)
     pantalla.display();
 }
 
+void dibujar_mirada_reojo_derecha(void)
+{
+    pantalla.clearDisplay();
+
+    // Ojo izquierdo con la pupila a la derecha
+    pantalla.fillRect(24, 26, 26, 12, SSD1306_WHITE);
+    pantalla.fillRect(42, 26, 8, 12, SSD1306_BLACK);
+    pantalla.drawLine(20, 18, 52, 26, SSD1306_WHITE);
+    pantalla.drawLine(20, 19, 52, 27, SSD1306_WHITE);
+
+    // Ojo derecho con la pupila a la derecha
+    pantalla.fillRect(78, 26, 26, 12, SSD1306_WHITE);
+    pantalla.fillRect(96, 26, 8, 12, SSD1306_BLACK);
+    pantalla.drawLine(76, 26, 108, 18, SSD1306_WHITE);
+    pantalla.drawLine(76, 27, 108, 19, SSD1306_WHITE);
+
+    // Boca seria
+    pantalla.fillRect(52, 44, 24, 4, SSD1306_WHITE);
+
+    pantalla.display();
+}
+
 void dibujar_ojos_descansando(void)
 {
     pantalla.clearDisplay();

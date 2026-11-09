@@ -31,6 +31,7 @@ bool ia_procesar_audio(const uint8_t* audio, size_t bytesAudio, RespuestaIA& res
     http.setTimeout(IA_TIMEOUT_MS);
 
     int codigo = http.POST((uint8_t*)audio, bytesAudio);
+    Serial.printf("HTTP codigo: %d\n", codigo);
 
     if(codigo <= 0)
     {

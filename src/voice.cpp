@@ -4,6 +4,7 @@
 #include "client_ia.h"
 #include "config.h"
 #include "command_router.h"
+#include "status.h"
 #include <Arduino.h>
 
 static int nivel_centro = 2048;
@@ -118,6 +119,7 @@ bool voz_procesar()
         return false;
     }
 
+    dibujar_pensativos();
     RespuestaIA respuesta;
 
     bool resultado = ia_procesar_audio(wav, bytesWav, respuesta);
@@ -130,10 +132,15 @@ bool voz_procesar()
         return false;
     }
 
-    if(respuesta.comando == "NINGUNO")
-    {
-        return true;
-    }
+     Serial.printf("IA -> comando: %s | valor: %s | respuesta: %s\n",
+     respuesta.comando.c_str(), respuesta.valor.c_str(),
+     respuesta.respuesta.c_str());
+
+      if(respuesta.comando == "NINGUNO")
+      {
+          dibujar_ojos_neutros();
+          return true;
+      }
 
     return ejecutar_comando(respuesta.comando, respuesta.valor);
 }

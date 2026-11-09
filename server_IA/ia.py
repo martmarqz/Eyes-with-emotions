@@ -2,6 +2,9 @@ import os
 import json
 import re #Busca y limpia partes del texto
 from groq import Groq #Conexion con IA
+from datetime import datetime
+
+DIAS = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"]
 
 cliente = Groq(api_key=os.environ.get("GROQ_API_KEY")) 
 
@@ -44,7 +47,11 @@ ESPECIALES = [
 # Recibe lo que el usuario dice
 def interpretar_texto(texto: str):
     #Defines las reglas para la IA
+    ahora = datetime.now()
+    fecha_hora = f"{DIAS[ahora.weekday()]} {ahora.strftime('%d/%m/%Y')}, son las {ahora.strftime('%H:%M')}"
+
     prompt_sistema = f"""Eres el cerebro de un robot interactivo con pantalla OLED.
+Fecha y hora actual: {fecha_hora}.
 Identifica UNA sola intención según lo que dijo el usuario y responde en español de forma breve y con personalidad.
 
 Categorías y valores permitidos (NO inventes valores fuera de estas listas):
@@ -57,12 +64,12 @@ Debes responder ÚNICAMENTE con un objeto JSON válido (sin texto adicional ni e
 {{"comando": "EMOCION", "valor": "FELIZ", "respuesta": "¡Hola! Estoy genial hoy."}}"""
 
     respuesta = cliente.chat.completions.create( #Envia y el texto y reglas a la IA
-        model="qwen/qwen3.8-27b",
+        model="qwen/qwen3-32b",
         messages=[
             {"role": "system", "content": prompt_sistema},
             {"role": "user", "content": texto}
         ],
-        max_tokens=250,
+        max_tokens=1024,
         temperature=0.2
     )
 

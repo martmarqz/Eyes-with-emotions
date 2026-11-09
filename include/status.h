@@ -52,6 +52,7 @@ enum e_Emociones
  * @brief Dibuja distintas emociones
  */
 void dibujar_mirada_reojo(void);
+void dibujar_mirada_reojo_derecha(void);
 void dibujar_ojos_descansando(void);
 void dibujar_ojos_escuchando(void);
 void dibujar_ojos_asqueados(void);
