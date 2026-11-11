@@ -32,12 +32,13 @@ void setup()
     );
 }
 
+
 void loop()
 {
-    #if USAR_SENSOR_DISTANCIA
+#if USAR_SENSOR_DISTANCIA
     int distancia = medir_distancia();
 #else
-    int distancia = -1; // sensor desactivado: siempre reposo
+    int distancia = -1;
 #endif
 
     actualizar_emocion_por_proximidad(distancia);
@@ -50,31 +51,31 @@ void loop()
     Serial.printf("Mic ADC: %d | ", obtener_nivel_mic());
     Serial.println(touch_presionado() ? "Touch presionado" : "Touch no presionado");
 
-       if (wifi_conectado() && digitalRead(SWITCH_PIN) == LOW)
-      {
-          Serial.println("Escuchando... habla ahora (5 segundos)");
-          dibujar_ojos_escuchando();
+    if (wifi_conectado() && digitalRead(SWITCH_PIN) == LOW)
+    {
+        Serial.println("Escuchando... habla ahora (5 segundos)");
+        dibujar_ojos_escuchando();
 
-          bool resultado = voz_procesar();
+        bool resultado = voz_procesar();
 
-          if (resultado)
-          {
-              Serial.println("Comando ejecutado");
-          }
-          else
-          {
-              Serial.println("Error procesando voz");
-              dibujar_ojos_confundidos();
-          }
+        if (resultado)
+        {
+            Serial.println("Comando ejecutado");
+        }
+        else
+        {
+            Serial.println("Error procesando voz");
+            dibujar_ojos_confundidos();
+        }
 
-          reactividad_mostrar_emocion_temporal(6000);
+        reactividad_mostrar_emocion_temporal(6000);
 
-          while (digitalRead(SWITCH_PIN) == LOW)
-          {
-              delay(10);
-          }
-          delay(200);
-      }
+        while (digitalRead(SWITCH_PIN) == LOW)
+        {
+            delay(10);
+        }
+        delay(200);
+    }
 
     delay(100);
 }

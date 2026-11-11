@@ -132,7 +132,8 @@ void actualizar_emocion_por_proximidad(int distancia)
             ejecutar_animacion_calabazas();
         }
 
-        while (touch_presionado())   // esperar a que suelte
+        unsigned long inicio_espera = millis();
+        while (touch_presionado()&&millis()-inicio_espera < 2000)   // esperar a que suelte
         {
             delay(10);
         }
@@ -145,6 +146,12 @@ void actualizar_emocion_por_proximidad(int distancia)
 
     // ===== Emoción temporal (por ejemplo, de la IA) =====
     if (!llego(reposo_bloqueado_hasta))
+    {
+        return;
+    }
+
+    //Si està dormido, ignora la distancia, solo hasta tocar el touch
+    if (estado_reposo == DORMIDO)
     {
         return;
     }
