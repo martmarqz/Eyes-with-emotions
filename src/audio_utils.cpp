@@ -67,7 +67,10 @@ size_t crear_wav(const uint8_t* pcm, size_t bytesPcm, uint8_t* wav, size_t capac
 
     escribir_uint32(wav + 40, bytesPcm);
 
-    memcpy(wav + 44, pcm, bytesPcm);
+        if (wav + 44 != pcm)
+    {
+        memmove(wav + 44, pcm, bytesPcm);
+    }
 
     return bytesPcm + WAV_HEADER_SIZE;
 }

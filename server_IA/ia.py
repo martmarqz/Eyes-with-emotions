@@ -64,7 +64,7 @@ Debes responder ÚNICAMENTE con un objeto JSON válido (sin texto adicional ni e
 {{"comando": "EMOCION", "valor": "FELIZ", "respuesta": "¡Hola! Estoy genial hoy."}}"""
 
     respuesta = cliente.chat.completions.create( #Envia y el texto y reglas a la IA
-        model="qwen/qwen3-32b",
+        model="openai/gpt-oss-120b",
         messages=[
             {"role": "system", "content": prompt_sistema},
             {"role": "user", "content": texto}

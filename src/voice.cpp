@@ -82,35 +82,48 @@ bool voz_procesar()
     Serial.printf("[VOZ] Memoria libre: %u | bloque mas grande: %u | necesito: %u\n",
                   ESP.getFreeHeap(), ESP.getMaxAllocHeap(), (unsigned)wavBytes);
 
-    // 1) Grabar
-    uint8_t* pcm = (uint8_t*)malloc(pcmBytes);
-    if (pcm == nullptr)
+    // Un solo bloque: 44 bytes de cabecera + el audio
+    uint8_t* wav = (uint8_t*)malloc(wavBytes);
+    if (wav == nullptr)
     {
-        Serial.println("[VOZ] ERROR: no hay memoria para grabar");
+        Serial.println("[VOZ] ERROR: no hay memoria");
         return false;
     }
+    uint8_t* pcm = wav + 44;   // el audio se graba justo después de la cabecera
 
+    // 1) Grabar
     size_t bytesGrabados = 0;
     if (!voz_grabar(pcm, pcmBytes, bytesGrabados, VOZ_DURACION_MS))
     {
         Serial.println("[VOZ] ERROR: fallo la grabacion");
-        free(pcm);
+        free(wav);
         return false;
     }
     Serial.printf("[VOZ] Grabados %u bytes\n", (unsigned)bytesGrabados);
 
-    // 2) Convertir a WAV
-    uint8_t* wav = (uint8_t*)malloc(wavBytes);
-    if (wav == nullptr)
+    // 2) Normalizar: subir el volumen para que el pico llegue a ~80% del máximo
     {
-        Serial.println("[VOZ] ERROR: no hay memoria para el WAV");
-        free(pcm);
-        return false;
+        int16_t* muestras = (int16_t*)pcm;
+        size_t n = bytesGrabados / sizeof(int16_t);
+        int pico = 1;
+        for (size_t i = 0; i < n; i++)
+        {
+            int v = abs(muestras[i]);
+            if (v > pico) pico = v;
+        }
+        float ganancia = 26000.0f / pico;
+        if (ganancia > 1.0f)
+        {
+            for (size_t i = 0; i < n; i++)
+            {
+                muestras[i] = (int16_t)(muestras[i] * ganancia);
+            }
+        }
+        Serial.printf("[VOZ] Pico %d, ganancia aplicada x%.1f\n", pico, ganancia);
     }
 
+    // 3) Escribir la cabecera WAV (el audio ya está en su lugar)
     size_t bytesWav = crear_wav(pcm, bytesGrabados, wav, wavBytes);
-    free(pcm); // ya no se necesita: libera memoria para el WiFi
-
     if (bytesWav == 0)
     {
         Serial.println("[VOZ] ERROR: fallo crear_wav");
@@ -118,7 +131,7 @@ bool voz_procesar()
         return false;
     }
 
-    // 3) Enviar al servidor
+    // 4) Enviar al servidor
     dibujar_pensativos();
     Serial.println("[VOZ] Enviando al servidor...");
 
@@ -132,7 +145,7 @@ bool voz_procesar()
         return false;
     }
 
-    // 4) Mostrar la respuesta
+    // 5) Mostrar la respuesta
     Serial.printf("IA -> comando: %s | valor: %s | respuesta: %s\n",
                   respuesta.comando.c_str(), respuesta.valor.c_str(),
                   respuesta.respuesta.c_str());
